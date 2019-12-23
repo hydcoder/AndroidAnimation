@@ -1,3 +1,5 @@
 <resources>
 	<string name="app_name">AnimationArt</string>
+	<string name="vector_demo">VECTOR_DEMO</string>
+	<string name="second_bezier">二阶贝塞尔曲线</string>
 </resources>
