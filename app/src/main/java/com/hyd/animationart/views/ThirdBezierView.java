@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
  * Created by hydCoder on 2019/12/23.
  * 以梦为马，明日天涯。
  */
-public class SecondBezierView extends View {
+public class ThirdBezierView extends View {
 
     private float mStartPointX;
     private float mStartPointY;
@@ -22,27 +22,32 @@ public class SecondBezierView extends View {
     private float mEndPointX;
     private float mEndPointY;
 
-    private float mFlagPointX;
-    private float mFlagPointY;
+    private float mFlagPointOneX;
+    private float mFlagPointOneY;
+
+    private float mFlagPointTwoX;
+    private float mFlagPointTwoY;
 
     private Path mPath;
     private Paint mPaintBezier;
     private Paint mPaintFlag;
     private Paint mPaintText;
 
-    public SecondBezierView(Context context) {
+    private boolean isSecondPoint = false;
+
+    public ThirdBezierView(Context context) {
         super(context);
         init();
     }
 
-    public SecondBezierView(Context context, @Nullable AttributeSet attrs) {
+    public ThirdBezierView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
 
         init();
     }
 
-    public SecondBezierView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public ThirdBezierView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
@@ -71,8 +76,10 @@ public class SecondBezierView extends View {
         mEndPointX = w * 3 / 4;
         mEndPointY = h / 2 - 200;
 
-        mFlagPointX = w / 2;
-        mFlagPointY = h / 2 - 300;
+        mFlagPointOneX = w / 2 - 100;
+        mFlagPointOneY = h / 2 - 300;
+        mFlagPointTwoX = w / 2 + 100;
+        mFlagPointTwoY = h / 2 - 300;
 
         mPath = new Path();
     }
@@ -82,26 +89,40 @@ public class SecondBezierView extends View {
         super.onDraw(canvas);
         mPath.reset();
         mPath.moveTo(mStartPointX, mStartPointY);
-        mPath.quadTo(mFlagPointX, mFlagPointY, mEndPointX, mEndPointY);
+        mPath.cubicTo(mFlagPointOneX, mFlagPointOneY, mFlagPointTwoX, mFlagPointTwoY, mEndPointX, mEndPointY);
 
         canvas.drawPoint(mStartPointX, mStartPointY, mPaintFlag);
         canvas.drawText("起点", mStartPointX, mStartPointY, mPaintText);
         canvas.drawPoint(mEndPointX, mEndPointY, mPaintFlag);
         canvas.drawText("终点", mEndPointX, mEndPointY, mPaintText);
-        canvas.drawPoint(mFlagPointX, mFlagPointY, mPaintFlag);
-        canvas.drawText("控制点", mFlagPointX, mFlagPointY, mPaintText);
-        canvas.drawLine(mStartPointX, mStartPointY, mFlagPointX, mFlagPointY, mPaintFlag);
-        canvas.drawLine(mEndPointX, mEndPointY, mFlagPointX, mFlagPointY, mPaintFlag);
+        canvas.drawPoint(mFlagPointOneX, mFlagPointOneY, mPaintFlag);
+        canvas.drawText("控制点1", mFlagPointOneX, mFlagPointOneY, mPaintText);
+        canvas.drawText("控制点2", mFlagPointTwoX, mFlagPointTwoY, mPaintText);
+        canvas.drawLine(mStartPointX, mStartPointY, mFlagPointOneX, mFlagPointOneY, mPaintFlag);
+        canvas.drawLine(mFlagPointOneX, mFlagPointOneY, mFlagPointTwoX, mFlagPointTwoY, mPaintFlag);
+        canvas.drawLine(mEndPointX, mEndPointY, mFlagPointTwoX, mFlagPointTwoY, mPaintFlag);
 
         canvas.drawPath(mPath, mPaintBezier);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (event.getAction() == MotionEvent.ACTION_MOVE) {
-            mFlagPointX = event.getX();
-            mFlagPointY = event.getY();
-            invalidate();
+        switch (event.getAction() & MotionEvent.ACTION_MASK) {
+            case MotionEvent.ACTION_POINTER_DOWN:
+                isSecondPoint = true;
+                break;
+            case MotionEvent.ACTION_POINTER_UP:
+                isSecondPoint = false;
+                break;
+            case MotionEvent.ACTION_MOVE:
+                mFlagPointOneX = event.getX(0);
+                mFlagPointOneY = event.getY(0);
+                if (isSecondPoint) {
+                    mFlagPointTwoX = event.getX(1);
+                    mFlagPointTwoY = event.getY(1);
+                }
+                invalidate();
+                break;
         }
         return true;
     }

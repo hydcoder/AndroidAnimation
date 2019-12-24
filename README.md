@@ -196,3 +196,17 @@
   3. Vector图像过于复杂时，不仅仅要注意绘制效率，初始化效率也是需要考虑的重要因素。
   4. SVG加载速度会快于PNG，但渲染速度会低于PNG，毕竟PNG有硬件加速，但平均下来，加载速度的提升弥补了渲染的速度缺陷。
 
+### Bezier曲线
+
+**Bézier curve(**[贝塞尔曲线](https://baike.baidu.com/item/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/1091769?fr=aladdin)**)**是应用于二维图形应用程序的[数学曲线](http://baike.baidu.com/view/627248.htm)。 曲线定义：起始点、终止点（也称锚点）、控制点。通过调整控制点，贝塞尔曲线的形状会发生变化。 1962年，法国数学家**Pierre Bézier**第一个研究了这种[矢量](http://baike.baidu.com/view/77474.htm)绘制曲线的方法，并给出了详细的计算公式，因此按照这样的公式绘制出来的曲线就用他的姓氏来命名，称为贝塞尔曲线。
+
+![一阶贝塞尔曲线](img\one_bezier.webp)
+
+![二阶贝塞尔曲线](img\two_bezier.webp)
+
+![三阶贝塞尔曲线](img\three_bezier.webp)
+
+![四阶贝塞尔曲线](img\four_bezier.webp)
+
+![五阶贝塞尔曲线](img\five_bezier.webp)
+

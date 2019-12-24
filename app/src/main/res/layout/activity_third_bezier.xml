@@ -4,10 +4,9 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:orientation="vertical"
-	tools:context=".SecondBezierActivity">
+	tools:context=".ThirdBezierActivity">
 
-	<com.hyd.animationart.views.SecondBezierView
+	<com.hyd.animationart.views.ThirdBezierView
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"/>
 

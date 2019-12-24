@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.vector_demo).setOnClickListener(this);
         findViewById(R.id.second_bezier).setOnClickListener(this);
+        findViewById(R.id.third_bezier).setOnClickListener(this);
     }
 
     @Override
@@ -22,7 +23,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v.getId() == R.id.vector_demo) {
             startActivity(new Intent(this, VectorDemoActivity.class));
         } else if (v.getId() == R.id.second_bezier) {
-            startActivity(new Intent(this, SecondBezierDemoActivity.class));
+            startActivity(new Intent(this, SecondBezierActivity.class));
+        } else if (v.getId() == R.id.third_bezier) {
+            startActivity(new Intent(this, ThirdBezierActivity.class));
         }
     }
 }

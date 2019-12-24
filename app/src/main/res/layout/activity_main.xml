@@ -17,4 +17,10 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:text="@string/second_bezier" />
+
+	<Button
+		android:id="@+id/third_bezier"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/third_bezier" />
 </LinearLayout>
