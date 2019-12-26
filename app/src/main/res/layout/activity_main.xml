@@ -23,4 +23,22 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:text="@string/third_bezier" />
+
+	<Button
+		android:id="@+id/draw_pad"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/draw_pad" />
+
+	<Button
+		android:id="@+id/path_morphing"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/path_morphing" />
+
+	<Button
+		android:id="@+id/bezier_wave"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/bezier_wave" />
 </LinearLayout>
