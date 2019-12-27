@@ -1,9 +1,16 @@
 <resources>
 	<string name="app_name">AnimationArt</string>
 	<string name="vector_demo">VECTOR_DEMO</string>
+	<string name="bezier_demo">BEZIER_DEMO</string>
+	<string name="path_measure_demo">PATH_MEASURE_DEMO</string>
+	<string name="animation_demo">10个动画demo</string>
 	<string name="second_bezier">二阶贝塞尔曲线</string>
 	<string name="third_bezier">三阶贝塞尔曲线</string>
 	<string name="draw_pad">两点连线的圆滑处理</string>
 	<string name="path_morphing">路径变换动画</string>
 	<string name="bezier_wave">贝塞尔曲线实现波浪动画</string>
+	<string name="bezier_path">贝塞尔路径动画</string>
+	<string name="path_tracing">路径绘制动画</string>
+	<string name="path_paint">路径绘制动画-Dash</string>
+	<string name="path_pos_tan">PathMeasure-PosTan</string>
 </resources>

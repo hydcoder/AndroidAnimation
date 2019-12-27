@@ -54,6 +54,7 @@ public class WaveBezierView extends View implements View.OnClickListener {
         mWaveLength = 800;
     }
 
+    @SuppressWarnings("IntegerDivisionInFloatingPointContext")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);

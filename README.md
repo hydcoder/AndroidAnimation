@@ -200,13 +200,84 @@
 
 **Bézier curve(**[贝塞尔曲线](https://baike.baidu.com/item/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF/1091769?fr=aladdin)**)**是应用于二维图形应用程序的[数学曲线](http://baike.baidu.com/view/627248.htm)。 曲线定义：起始点、终止点（也称锚点）、控制点。通过调整控制点，贝塞尔曲线的形状会发生变化。 1962年，法国数学家**Pierre Bézier**第一个研究了这种[矢量](http://baike.baidu.com/view/77474.htm)绘制曲线的方法，并给出了详细的计算公式，因此按照这样的公式绘制出来的曲线就用他的姓氏来命名，称为贝塞尔曲线。
 
+Android提供了二阶贝塞尔曲线和三阶贝塞尔曲线的 API，利用这两个api可以将更高阶的贝塞尔曲线的效果转换成多个二阶贝塞尔曲线和三阶贝塞尔曲线。
+
+
+
+##### 一阶贝塞尔曲线
+
+描述：由 P0 至 P1 的连续点， 描述的一条线段
+
+通用公式：
+
+![一阶贝塞尔曲线通用公式](img\one_bezier_formula.jpg)
+
+> B(t)为t时间下 点的坐标；
+>
+> P0为起点,Pn为终点,Pi为控制点。
+>
+> 下同
+
+效果图：
+
 ![一阶贝塞尔曲线](img\one_bezier.webp)
+
+##### 二阶贝塞尔曲线
+
+描述：由 P0 至 P1 的连续点 Q0，描述一条线段。由 P1 至 P2 的连续点 Q1，描述一条线段。由 Q0 至 Q1 的连续点 B(t)，描述一条二次贝塞尔曲线。
+
+通用公式：
+
+![一阶贝塞尔曲线通用公式](img\two_bezier_formula.jpg)
+
+效果图：
 
 ![二阶贝塞尔曲线](img\two_bezier.webp)
 
-![三阶贝塞尔曲线](img\three_bezier.webp)
+##### 三阶贝塞尔曲线
 
-![四阶贝塞尔曲线](img\four_bezier.webp)
+通用公式：
 
-![五阶贝塞尔曲线](img\five_bezier.webp)
+![一阶贝塞尔曲线通用公式](img\three_bezier_formula.jpg)
 
+效果图：
+
+![五阶贝塞尔曲线](img\three_bezier.webp)
+
+
+
+### PathMeasure
+
+#### 初步认识
+
+- 初始化
+
+  ```java
+  // 创建PathMeasure对象
+  PathMeasure pathMeasure = new PathMeasure();
+  // 设置关联Path
+  // PathMeasure(Path path, boolean forceClosed);
+  // forceClosed: 对绑定的Path不会产生任何影响，对PathMeasure的测量结果有影响
+  pathMeasure.setPath(path, true);
+  ```
+
+- API
+
+  - **getLength**：获取计算的路径长度
+
+  - **getSegment**：用于截取path中的一个片段
+
+    ```java
+    public boolean getSegment(float startD, float stopD, Path dst, boolean startWithMoveTo){...}
+    ```
+
+  - getPosTan：用于获取路径上某点的坐标及其切线的坐标
+
+    ```java
+    public boolean getPosTan(float distance, float pos[], float tan[]) {...}
+    
+    // 通过getPosTan获取到某点切线的坐标去获取路径上某点的切线的角度
+    (Math.atan2(tan[1], tan[0] * 180.0 / Math.PI))
+    ```
+
+    

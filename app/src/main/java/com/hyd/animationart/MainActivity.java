@@ -1,10 +1,10 @@
 package com.hyd.animationart;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -14,11 +14,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         findViewById(R.id.vector_demo).setOnClickListener(this);
-        findViewById(R.id.second_bezier).setOnClickListener(this);
-        findViewById(R.id.third_bezier).setOnClickListener(this);
-        findViewById(R.id.draw_pad).setOnClickListener(this);
-        findViewById(R.id.path_morphing).setOnClickListener(this);
-        findViewById(R.id.bezier_wave).setOnClickListener(this);
+        findViewById(R.id.bezier_demo).setOnClickListener(this);
+        findViewById(R.id.path_measure_demo).setOnClickListener(this);
+        findViewById(R.id.animation_demo).setOnClickListener(this);
     }
 
     @Override
@@ -27,20 +25,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.vector_demo:
                 startActivity(new Intent(this, VectorDemoActivity.class));
                 break;
-            case R.id.second_bezier:
-                startActivity(new Intent(this, SecondBezierActivity.class));
+            case R.id.bezier_demo:
+                startActivity(new Intent(this, BezierDemoActivity.class));
                 break;
-            case R.id.third_bezier:
-                startActivity(new Intent(this, ThirdBezierActivity.class));
+            case R.id.path_measure_demo:
+                startActivity(new Intent(this, PathMeasureDemoActivity.class));
                 break;
-            case R.id.draw_pad:
-                startActivity(new Intent(this, DrawPadActivity.class));
-                break;
-            case R.id.path_morphing:
-                startActivity(new Intent(this, PathMorphingActivity.class));
-                break;
-            case R.id.bezier_wave:
-                startActivity(new Intent(this, WaveActivity.class));
+            case R.id.animation_demo:
+//                startActivity(new Intent(this, DrawPadActivity.class));
                 break;
         }
     }

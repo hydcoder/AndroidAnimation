@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".BezierDemoActivity">
+
+	<Button
+		android:id="@+id/second_bezier"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/second_bezier" />
+
+	<Button
+		android:id="@+id/third_bezier"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/third_bezier" />
+
+	<Button
+		android:id="@+id/draw_pad"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/draw_pad" />
+
+	<Button
+		android:id="@+id/path_morphing"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/path_morphing" />
+
+	<Button
+		android:id="@+id/bezier_wave"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/bezier_wave" />
+	<Button
+		android:id="@+id/bezier_path"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/bezier_path" />
+
+</LinearLayout>

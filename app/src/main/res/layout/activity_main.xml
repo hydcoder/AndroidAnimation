@@ -13,32 +13,20 @@
 		android:text="@string/vector_demo" />
 
 	<Button
-		android:id="@+id/second_bezier"
+		android:id="@+id/bezier_demo"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:text="@string/second_bezier" />
+		android:text="@string/bezier_demo" />
 
 	<Button
-		android:id="@+id/third_bezier"
+		android:id="@+id/path_measure_demo"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:text="@string/third_bezier" />
-
+		android:text="@string/path_measure_demo" />
 	<Button
-		android:id="@+id/draw_pad"
+		android:id="@+id/animation_demo"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:text="@string/draw_pad" />
+		android:text="@string/animation_demo" />
 
-	<Button
-		android:id="@+id/path_morphing"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:text="@string/path_morphing" />
-
-	<Button
-		android:id="@+id/bezier_wave"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:text="@string/bezier_wave" />
 </LinearLayout>

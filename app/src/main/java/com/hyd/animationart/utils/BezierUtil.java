@@ -5,6 +5,7 @@ import android.graphics.PointF;
 public class BezierUtil {
 
     /**
+     * 二阶贝塞尔曲线点坐标计算公式
      * B(t) = (1 - t)^2 * P0 + 2t * (1 - t) * P1 + t^2 * P2, t ∈ [0,1]
      *
      * @param t  曲线长度比例
@@ -22,6 +23,7 @@ public class BezierUtil {
     }
 
     /**
+     * 三阶贝塞尔曲线点坐标计算公式
      * B(t) = P0 * (1-t)^3 + 3 * P1 * t * (1-t)^2 + 3 * P2 * t^2 * (1-t) + P3 * t^3, t ∈ [0,1]
      *
      * @param t  曲线长度比例
