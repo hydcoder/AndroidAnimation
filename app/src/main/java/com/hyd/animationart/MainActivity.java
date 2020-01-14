@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, PathMeasureDemoActivity.class));
                 break;
             case R.id.animation_demo:
-//                startActivity(new Intent(this, DrawPadActivity.class));
+                startActivity(new Intent(this, TenAnimationDemoActivity.class));
                 break;
         }
     }
