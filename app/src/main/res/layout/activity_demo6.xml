@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:dots="http://schemas.android.com/apk/res-auto"
+	tools:context=".demo.Demo6Activity">
+
+	<LinearLayout
+		android:id="@+id/linearLayout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center_horizontal"
+		android:layout_centerInParent="true"
+		android:orientation="horizontal">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Loading"
+			android:textColor="@android:color/primary_text_light"
+			android:textSize="45sp" />
+
+		<com.hyd.animationart.views.Demo6View
+			android:id="@+id/dots"
+			dots:autoplay="true"
+			dots:period="1000"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="@android:color/primary_text_light"
+			android:textSize="45sp" />
+	</LinearLayout>
+
+
+</RelativeLayout>

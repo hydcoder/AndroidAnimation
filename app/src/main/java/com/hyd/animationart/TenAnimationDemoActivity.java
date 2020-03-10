@@ -6,9 +6,16 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hyd.animationart.demo.Demo10Activity;
 import com.hyd.animationart.demo.Demo1Activity;
 import com.hyd.animationart.demo.Demo2Activity;
 import com.hyd.animationart.demo.Demo3Activity;
+import com.hyd.animationart.demo.Demo4Activity;
+import com.hyd.animationart.demo.Demo5Activity;
+import com.hyd.animationart.demo.Demo6Activity;
+import com.hyd.animationart.demo.Demo7Activity;
+import com.hyd.animationart.demo.Demo8Activity;
+import com.hyd.animationart.demo.Demo9Activity;
 
 public class TenAnimationDemoActivity extends AppCompatActivity {
 
@@ -31,23 +38,30 @@ public class TenAnimationDemoActivity extends AppCompatActivity {
     }
 
     public void demo4(View view) {
+        startActivity(new Intent(this, Demo4Activity.class));
     }
 
     public void demo5(View view) {
+        startActivity(new Intent(this, Demo5Activity.class));
     }
 
     public void demo6(View view) {
+        startActivity(new Intent(this, Demo6Activity.class));
     }
 
     public void demo7(View view) {
+        startActivity(new Intent(this, Demo7Activity.class));
     }
 
     public void demo8(View view) {
+        startActivity(new Intent(this, Demo8Activity.class));
     }
 
     public void demo9(View view) {
+        startActivity(new Intent(this, Demo9Activity.class));
     }
 
     public void demo10(View view) {
+        startActivity(new Intent(this, Demo10Activity.class));
     }
 }
