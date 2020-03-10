@@ -4,7 +4,7 @@
 
 # AndroidAnimation
 
- Android 高级动画Demo
+ Android Vector以及贝塞尔曲线结合属性动画实现的Demo
 
 ### VectorDrawable基础知识
 
@@ -32,27 +32,27 @@
 
 [SVG Editor](http://editor.method.ac/)
 
-![](img\svg_editor.png)
+![](img/svg_editor.png)
 
 ##### SVG转换VectorDrawable
 
 - 由于Android原生支持的是Vector，所以可以将SVG转换成vector——[SVG2Android](http://inloop.github.io/svg2android/)
 
-  ![](img\svg2Android.png)
+  ![](img/svg2Android.png)
 
 - 也可以通过Android studio自带的**Vector Asset**工具将SVG转换成vector，在**res**下的**drawable**目录右击选择**new**，然后选择**Vector Asset**即可。
 
-  ![](img\vector_asset.jpg)
+  ![](img/vector_asset.jpg)
 
 ###### 转换效果对比
 
-![](img\result.jpg)
+![](img/result.jpg)
 
 ##### SVG图片资源
 
 [SVG图片资源](http://www.iconfont.cn/plus/collections/index)
 
-![](img\svg_download.png)
+![](img/svg_download.png)
 
 #### VectorDrawable兼容性
 
@@ -91,20 +91,19 @@
 
 - Vector图像标签
 
-  ```xml
-<!-- 绘制一个矩形 -->
-  <vector xmlns:android="http://schemas.android.com/apk/res/android"
-  	android:width="48dp"
-  	android:height="48dp"
-  	android:viewportWidth="200"
-  	android:viewportHeight="200">
-  
-  	<path
-  		android:name="square"
-  		android:fillColor="#272636"
-  		android:pathData="M50,50 L100,50 L100,100 L50,100z"/>
-  </vector>
-  ```
+   ```xml
+ <!-- 绘制一个矩形 -->
+   <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <path
+     android:name="square"
+     android:fillColor="#272636"
+     android:pathData="M50,50 L100,50 L100,100 L50,100z"/>
+   </vector>```
   
   - **android:width\android:height** : 定义图片的宽高
   - **android:viewportWidth\android:viewportHeight** : 定义图像被划分的比例大小
@@ -210,7 +209,7 @@ Android提供了二阶贝塞尔曲线和三阶贝塞尔曲线的 API，利用这
 
 通用公式：
 
-![一阶贝塞尔曲线通用公式](img\one_bezier_formula.jpg)
+![一阶贝塞尔曲线通用公式](img/one_bezier_formula.jpg)
 
 > B(t)为t时间下 点的坐标；
 >
@@ -220,7 +219,7 @@ Android提供了二阶贝塞尔曲线和三阶贝塞尔曲线的 API，利用这
 
 效果图：
 
-![一阶贝塞尔曲线](img\one_bezier.webp)
+![一阶贝塞尔曲线](img/one_bezier.webp)
 
 ##### 二阶贝塞尔曲线
 
@@ -228,21 +227,21 @@ Android提供了二阶贝塞尔曲线和三阶贝塞尔曲线的 API，利用这
 
 通用公式：
 
-![一阶贝塞尔曲线通用公式](img\two_bezier_formula.jpg)
+![一阶贝塞尔曲线通用公式](img/two_bezier_formula.jpg)
 
 效果图：
 
-![二阶贝塞尔曲线](img\two_bezier.webp)
+![二阶贝塞尔曲线](img/two_bezier.webp)
 
 ##### 三阶贝塞尔曲线
 
 通用公式：
 
-![一阶贝塞尔曲线通用公式](img\three_bezier_formula.jpg)
+![一阶贝塞尔曲线通用公式](img/three_bezier_formula.jpg)
 
 效果图：
 
-![五阶贝塞尔曲线](img\three_bezier.webp)
+![五阶贝塞尔曲线](img/three_bezier.webp)
 
 
 
